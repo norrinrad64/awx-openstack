@@ -16,3 +16,17 @@
        security_groups: default
        meta:
          os: ubuntu
+  
+  - name: Add second Server
+    os_server:
+       state: present
+       name: vm2
+       image: "centos-22042020"
+       key_name: centos-22042020
+       timeout: 200
+       flavor: k8s-haproxy
+       auto_ip: no
+       network: net-public
+       security_groups: default
+       meta:
+         os: centos
