@@ -28,5 +28,5 @@
    - name: Set up authorized keys for the svc_ansible user
      authorized_key: 
       user: svc_ansible
-      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLSJ8e79zL2CaVfLq10BiO4ToZV88thbuZo7nhSxcg90fiDz8jCte83tDcsOqRyXXD7Yyefyt2WIUB3YAFW2TIEAgsl/TX14UHp3ckCJGl+N55/9ul+h1YvM2NIOuoZfHJdVf8PLY9mubzvZIxrNCC6rY4MsC+vj6KH+FVwBVeFRyOrADY/7j1IhzxRZl1Qbd+LsqpyE1X6U5lZoZ2XJzqWh4nKHFrmjYo4V9zYKb1B19D9HQVAAXpFLWwjbcqwA4SvMFuWPUZogWbE0VJIrWBl/JQ6cvnjtVNkO8fGqRspdODB0+CH8FDYs1Z6gJB0DgeqKt+Ngy1wKRAJj0aBXqJ"
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDM3KvAGA8anJJKp/EfQ0tcAjFoV1/ycSLhTbgEOTQIB1PbjWxZ3VyhpTm7AYAN0tszLMmme1tMOwbObDLhWW0RybqlRyVNwDN0V444gh31gL4lfz9llabxquPUJtnWDPBcPVPGBLPJ6JlpZccrvOB8h6BTw/FKi7MzNoOVQS6hTeWxNN6NLhwCyV+IT5Xkq8PIXTFfNYopzJLKjuUaj0d2X/TK7MqrZUhhGzeqMDs900bJStHkfbEJXPPih0lohHnrfOh6lVCJC+sMRQ8owI/kTKnyJ/JoiW1AagxmYYatyc64cP2Ym4P8pMvWOw7+NO8PfIpsIGoeE7n23EbUOTtD svc-ansible@devops-box"
      
