@@ -1,9 +1,9 @@
 ---
-- name: Testing initial on devzero.edu
+- name: Deploiment instances openstack
   hosts: localhost
   
   tasks:
-  - name: Create a new instance and attaches to a network and passes metadata to the instance
+  - name: Instance ubuntu
     os_server:
        state: present
        name: awx-vm1
@@ -17,12 +17,12 @@
        meta:
          os: ubuntu
   
-  - name: Add second Server
+  - name: Instance centos
     os_server:
        state: present
        name: vm2
-       image: "centos-22042020"
-       key_name: centos-22042020
+       image: "CentOS-7-x86_64-GenericCloud"
+       key_name: centos
        timeout: 200
        flavor: k8s-haproxy
        auto_ip: no
