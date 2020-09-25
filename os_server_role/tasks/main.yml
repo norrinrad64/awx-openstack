@@ -1,7 +1,7 @@
 - name: Create Openstack Server
   os_server:
     name: "{{  item.key }}"
-    state: present
+    state: absent
     image: "{{  item.value.image }}"
     key_name: "{{  item.value.ssh_key_name }}"
     timeout: 200
