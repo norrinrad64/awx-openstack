@@ -19,7 +19,7 @@
   
   - name: Instance centos
     os_server:
-       state: present
+       state: absent
        name: vm2
        image: "CentOS-7-x86_64-GenericCloud"
        key_name: centos
