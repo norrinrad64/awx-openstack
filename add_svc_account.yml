@@ -1,0 +1,32 @@
+---
+- name: Add User and distribute key
+  gather_facts: yes
+  hosts: all
+
+  tasks :
+
+   - name: Ensure group "wheel" exists
+     group:
+       name: wheel
+       state: present
+
+   - name: Allow 'wheel' group to have passwordless sudo
+     lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%wheel'
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+   
+   - name: Add the user 'svc_ansible' with a bash shell, appending the group 'wheel' to the user's groups
+     user:
+      name: svc_ansible
+      shell: /bin/bash
+      groups: wheel
+      append: yes
+      
+   - name: Set up authorized keys for the svc_ansible user
+     authorized_key: 
+      user: svc_ansible
+      key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLSJ8e79zL2CaVfLq10BiO4ToZV88thbuZo7nhSxcg90fiDz8jCte83tDcsOqRyXXD7Yyefyt2WIUB3YAFW2TIEAgsl/TX14UHp3ckCJGl+N55/9ul+h1YvM2NIOuoZfHJdVf8PLY9mubzvZIxrNCC6rY4MsC+vj6KH+FVwBVeFRyOrADY/7j1IhzxRZl1Qbd+LsqpyE1X6U5lZoZ2XJzqWh4nKHFrmjYo4V9zYKb1B19D9HQVAAXpFLWwjbcqwA4SvMFuWPUZogWbE0VJIrWBl/JQ6cvnjtVNkO8fGqRspdODB0+CH8FDYs1Z6gJB0DgeqKt+Ngy1wKRAJj0aBXqJ"
+     
