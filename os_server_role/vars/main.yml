@@ -1,0 +1,19 @@
+server_definitions:
+ k8s-worker-4:
+  image: ubuntu-1804
+  ssh_key_name: k8s-ubuntu
+  flavor: k8s-worker
+  network: net-public
+  security_groups: default
+  tags: 
+    os: ubuntu
+
+ k8s-worker-5:
+  image: ubuntu-1804
+  ssh_key_name: k8s-ubuntu
+  flavor: k8s-worker
+  network: net-public
+  security_groups: default
+  tags:
+    os: ubuntu
+
