@@ -6,11 +6,11 @@
   - name: Instance ubuntu
     os_server:
        state: present
-       name: awx-vm1
+       name: k8s-worker-4
        image: "ubuntu-1804"
        key_name: k8s-ubuntu
        timeout: 200
-       flavor: k8s-haproxy 
+       flavor: k8s-worker
        auto_ip: no
        network: net-public
        security_groups: default
