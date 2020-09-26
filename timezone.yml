@@ -11,6 +11,8 @@
             backup=yes
       notify:
         - update timezone
-  handlers:
-    - name: update timezone
-      command: timedatectl set-timezone Europe/Paris
+    
+    - name: Reconfigure Timezone Data
+      shell: timedatectl set-timezone Europe/Paris
+      sudo: true
+      when: timezone.changed
