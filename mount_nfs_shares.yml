@@ -16,10 +16,19 @@
       mode: "u=rw,g=wx,o=rwx"
       recurse: yes
 
-  - name: Montage NFS haproxy : /srv/nfs/kubedata
+  - name: Montage NFS haproxy kubedata
     mount:
      path: /home/kubedata
      src: 192.168.1.163:/srv/nfs/kubedata
+     fstype: nfs
+     opts: rw,soft
+     state: mounted
+
+
+ name: Mount User remote homes
+    mount:
+     path: /home/nfs
+     src: 165.117.214.246:/share/home
      fstype: nfs
      opts: rw,soft
      state: mounted
