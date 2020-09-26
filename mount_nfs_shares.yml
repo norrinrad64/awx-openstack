@@ -1,0 +1,25 @@
+---
+- name: Vérification package nfs-client présent
+  hosts: all
+
+  tasks:
+  - name: Installation NFS client package sur Ubuntu 
+    apt:
+     name: nfs-client
+     state: present
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+  - name: Création dossier /tmp/kubedata pour montage NFS vers haproxy
+    file:
+      path: "/tmp/kubedata"
+      state: directory
+      mode: "u=rw,g=wx,o=rwx"
+      recurse: yes
+
+  - name: Montage NFS haproxy : /srv/nfs/kubedata
+    mount:
+     path: /home/kubedata
+     src: 192.168.1.163:/srv/nfs/kubedata
+     fstype: nfs
+     opts: rw,soft
+     state: mounted
