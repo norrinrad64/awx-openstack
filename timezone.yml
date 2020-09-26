@@ -12,7 +12,7 @@
       notify:
         - update timezone
     
-    - name: Reconfigure Timezone Data
-      shell: timedatectl set-timezone Europe/Paris
-      sudo: true
-      when: timezone.changed
+    - name: This command will change the working directory to somedir/
+      shell:
+        cmd: timedatectl set-timezone Europe/Paris
+        chdir: somedir/
