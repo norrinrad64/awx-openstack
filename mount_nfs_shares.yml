@@ -24,11 +24,3 @@
      opts: rw,soft
      state: mounted
 
-
- name: Mount User remote homes
-    mount:
-     path: /home/nfs
-     src: 165.117.214.246:/share/home
-     fstype: nfs
-     opts: rw,soft
-     state: mounted
