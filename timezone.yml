@@ -2,7 +2,7 @@
   hosts: all
 
   tasks:
-    - name: Ttimezone variables
+    - name: Timezone variables
       copy: content="Etc/UTC\n"
             dest=/etc/timezone
             owner=root
@@ -12,6 +12,6 @@
       notify:
         - update timezone
     
-    - name: commande timectl
+    - name: commande timedatectl
       shell:
         cmd: timedatectl set-timezone Europe/Paris
