@@ -5,7 +5,7 @@
       file: path=/srv/nfs/kubedata state=directory mode=777 owner=root group=root
     
     - name: Verification presence package nfs-common et nfs-kernel-server
-      apt: name={{ item }} state=installed update_cache=yes
+      apt: name={{ item }} state=present update_cache=yes
       with_items:
         - nfs-common
         - nfs-kernel-server
