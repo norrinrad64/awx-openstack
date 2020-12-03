@@ -2,6 +2,6 @@
   hosts: all
 
   tasks:
-  - name: Set timezone to Europe/Paris
-    community.general.timezone:
-      name: Europe/Paris
+   - name: Set timezone to Europe/Paris
+     community.general.timezone:
+       name: Europe/Paris
