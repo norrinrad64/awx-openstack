@@ -1,7 +1,6 @@
 - name: Configuration de la timezone
   hosts: all
-
   tasks:
-   - name: set timezone to Europe/Paris
-     timezone:
-       name: Europe/Paris
+    - name: set timezone to Europe/Paris
+      timezone:
+        name: Europe/Paris
