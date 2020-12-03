@@ -1,0 +1,7 @@
+- name: Vérification package nfs-ccommon présent
+  hosts: all
+
+  tasks:
+  - name: NFS common doit être présent.
+    apt: name=nfs-common state=installed update_cache=yes
+
