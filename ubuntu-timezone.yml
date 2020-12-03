@@ -1,4 +1,4 @@
-- name: Configuration de la timezone
+- name: Configuration de la timezone Europe/Paris
   hosts: all
   tasks:
     - name: set timezone to Europe/Paris
