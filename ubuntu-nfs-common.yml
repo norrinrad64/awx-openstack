@@ -1,9 +1,7 @@
 - name: Vérification package nfs-common présent
   hosts: all
-
   tasks:
-  - name: NFS common doit être présent.
-    package:
-      name: ntpdate
-      state: present
-
+    - name: NFS common doit être présent.
+      package:
+        name: nfs-common
+        state: present
