@@ -2,7 +2,7 @@
   hosts: all
   tasks:
     - name: Create dossier /srv/nfs/kubedata
-      file: path=/srv/nfs/kubedata state=directory mode=777 owner=root group=roo
+      file: path=/srv/nfs/kubedata state=directory mode=777 owner=root group=root
     
     - name: Verification presence package nfs-common et nfs-kernel-server
       apt: name={{ item }} state=installed update_cache=yes
