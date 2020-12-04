@@ -19,14 +19,3 @@
 
     - name: restart nfs server
       service: name=nfs-kernel-server state=restarted
-
-    - name: Update apt package
-      apt:
-      name: "*"
-      state: latest
-      update_cache: yes
-      - name: Install Packages
-        apt:
-          pkg: "{{ packages }}"
-          state: latest
-          update_cache: yes
