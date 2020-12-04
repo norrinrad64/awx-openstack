@@ -1,18 +1,14 @@
 - name: Installation et configuration server NFS
   hosts: all
-  vars:
-   - packages:
-     - nfs-common
-     - nfs-kernel-server
   tasks:
     - name: Create dossier /srv/nfs/kubedata
       file: path=/srv/nfs/kubedata state=directory mode=777 owner=root group=root
-    
-    - name: Installation des packages nfs-common et nfs-kernel-server
-       apt:
-         pkg: "{{ packages }}"
-         state: latest
-         update_cache: yes
+
+    - name: Verification presence package nfs-common et nfs-kernel-server
+      apt: name={{ item }} state=present update_cache=yes
+      with_items:
+        - nfs-common
+        - nfs-kernel-server
 
     - name: Copie du fichier /etc/exports
       template: src=templates/exports.j2 dest=/etc/exports owner=root group=root
